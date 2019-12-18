@@ -1,11 +1,13 @@
-<nav class="ui-g navigation">
-  <div class="ui-g-12 ui-g-nopad navigation__logo">
-    <img src="assets/img/logo.jpg"
-         (click)="redirectToMainPage()"
-         alt="Logo">
-  </div>
-  <div class="ui-g-12 ui-g-nopad navigation__menu">
+<nav class="ui-g">
+<!--  <div class="ui-g-12 navigation__logo">-->
+<!--    <img src="assets/img/logo.jpg"-->
+<!--         (click)="redirectToMainPage()"-->
+<!--         alt="Logo">-->
+<!--  </div>-->
+  <div class="ui-g-12">
     <p-menubar [model]="menuItems"></p-menubar>
   </div>
-  <router-outlet></router-outlet>
+  <div class="ui-g-12">
+    <router-outlet></router-outlet>
+  </div>
 </nav>
