@@ -1,14 +1,37 @@
 <p-panel header="Dostępne Usługi">
-  <p-card header="Simple Card" [style]="{width: '360px'}">
-    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-      quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</div>
-  </p-card>
-  <p-card header="Simple Card" [style]="{width: '360px'}">
-    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-      quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</div>
-  </p-card>
-  <p-card header="Simple Card" [style]="{width: '360px'}">
-    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-      quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</div>
-  </p-card>
+  <!--  <p-card header="Simple Card" [style]="{width: '360px'}">-->
+  <!--    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam-->
+  <!--      deserunt-->
+  <!--      quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!-->
+  <!--    </div>-->
+  <!--  </p-card>-->
+  <!--  <p-card header="Simple Card" [style]="{width: '360px'}">-->
+  <!--    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam-->
+  <!--      deserunt-->
+  <!--      quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!-->
+  <!--    </div>-->
+  <!--  </p-card>-->
+  <!--  <p-card header="Simple Card" [style]="{width: '360px'}">-->
+  <!--    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam-->
+  <!--      deserunt-->
+  <!--      quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!-->
+  <!--    </div>-->
+  <!--  </p-card>-->
+  <p-table [value]="services$ | async"
+           [rowHover]="true"
+           [scrollable]="true"
+           scrollHeight="400px">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Nazwa usługi</th>
+        <th>Cena usługi</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-service>
+      <tr class="ui-selectable-row">
+        <td>{{service.type}}</td>
+        <td>{{service.price}}</td>
+      </tr>
+    </ng-template>
+  </p-table>
 </p-panel>

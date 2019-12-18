@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MenuItem} from 'primeng/api';
 import {Router} from '@angular/router';
+import {loadAllServices} from '../../state/system.actions';
+import {Store} from '@ngrx/store';
+import {SystemFeatureState} from '../../state/system.reducer';
 
 @Component({
   selector: 'app-main',
@@ -12,7 +15,11 @@ export class MainComponent implements OnInit {
   menuItems: MenuItem[];
   display: boolean;
 
+  constructor(private readonly store$: Store<SystemFeatureState>) {
+  }
+
   ngOnInit(): void {
+    this.store$.dispatch(loadAllServices());
     this.display = true;
     this.menuItems = [
       {

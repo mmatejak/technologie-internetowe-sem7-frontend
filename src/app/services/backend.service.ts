@@ -15,16 +15,17 @@ export class BackendService {
 
   getAllNotifications(): Observable<NotificationView[]> {
     const httpHeaders = new HttpHeaders().append('Content-Type', 'application/json');
-    return this.httpClient.get<NotificationView[]>('http://localhost:8080/notifications/all', {headers: httpHeaders});
+    return this.httpClient.get<NotificationView[]>('/api/notifications/all', {headers: httpHeaders});
   }
 
   addNewNotification(notificationDto: NotificationDto): Observable<any> {
     const httpHeaders = new HttpHeaders().append('Content-Type', 'application/json');
-    return this.httpClient.post('http://localhost:8080/notifications/add', notificationDto, {headers: httpHeaders});
+    return this.httpClient.post('/api/notifications/add', notificationDto, {headers: httpHeaders});
   }
 
   getAllServices(): Observable<ServiceView[]> {
-    const httpHeaders = new HttpHeaders().append('Content-Type', 'application/json');
-    return this.httpClient.get<ServiceView[]>('http://localhost:8080/services/all', {headers: httpHeaders});
+    const httpHeaders = new HttpHeaders()
+      .append('Content-Type', 'application/json');
+    return this.httpClient.get<ServiceView[]>('/api/services/all', {headers: httpHeaders});
   }
 }

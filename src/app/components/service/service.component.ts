@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ServiceView} from '../../models/serviceView.model';
+import {Observable} from 'rxjs';
+import {Store} from '@ngrx/store';
+import {SystemFeatureState} from '../../state/system.reducer';
+import {getAllServices} from '../../state/system.selector';
+import {filterNotNil} from '../../sharedkernel/rxjs/rxjs';
 
 @Component({
   selector: 'app-service',
@@ -7,9 +13,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServiceComponent implements OnInit {
 
-  constructor() { }
+  services$: Observable<ServiceView[]>;
 
-  ngOnInit() {
+  constructor(private readonly store$: Store<SystemFeatureState>) {
   }
 
+  ngOnInit() {
+    this.services$ = this.store$.select(getAllServices).pipe(filterNotNil);
+  }
 }
