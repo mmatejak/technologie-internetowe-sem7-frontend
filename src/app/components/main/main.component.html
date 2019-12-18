@@ -1,13 +1,15 @@
 <nav class="ui-g">
-<!--  <div class="ui-g-12 navigation__logo">-->
-<!--    <img src="assets/img/logo.jpg"-->
-<!--         (click)="redirectToMainPage()"-->
-<!--         alt="Logo">-->
-<!--  </div>-->
-  <div class="ui-g-12">
-    <p-menubar [model]="menuItems"></p-menubar>
+  <div class="ui-g-2 ui-fluid">
+    <p-megaMenu [model]="menuItems" orientation="vertical"></p-megaMenu>
   </div>
-  <div class="ui-g-12">
+  <div class="ui-g-8 ui-fluid">
     <router-outlet></router-outlet>
+  </div>
+  <div class="ui-g-2 ui-fluid">
+    <p-panel header="Reklama">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam
+        deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate
+        neque quas!</p>
+    </p-panel>
   </div>
 </nav>

@@ -12,9 +12,6 @@ export class MainComponent implements OnInit {
   menuItems: MenuItem[];
   display: boolean;
 
-  constructor(private readonly router: Router) {
-  }
-
   ngOnInit(): void {
     this.display = true;
     this.menuItems = [
@@ -37,9 +34,5 @@ export class MainComponent implements OnInit {
         routerLink: '/contact'
       }
     ];
-  }
-
-  redirectToMainPage(): void {
-    this.router.navigate(['/']);
   }
 }

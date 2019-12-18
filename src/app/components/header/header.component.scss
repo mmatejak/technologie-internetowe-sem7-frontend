@@ -1,0 +1,13 @@
+@import "./../../../variables.scss";
+
+$logout-button-spacing: 0.5rem;
+.navigation {
+  &__logo {
+    height: $logo-height;
+
+    img {
+      width: auto;
+      height: $logo-height;
+    }
+  }
+}

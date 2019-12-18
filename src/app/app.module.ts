@@ -16,6 +16,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import {CardModule} from 'primeng/card';
 import {PanelModule} from 'primeng/panel';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MegaMenuModule} from 'primeng/megamenu';
 
 @NgModule({
   declarations: [
@@ -29,15 +30,16 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MainComponent,
     FooterComponent
   ],
-  imports: [
-    BrowserModule,
-    MenubarModule,
-    ConfirmDialogModule,
-    AppRoutingModule,
-    CardModule,
-    PanelModule,
-    BrowserAnimationsModule,
-  ],
+    imports: [
+        BrowserModule,
+        MenubarModule,
+        ConfirmDialogModule,
+        AppRoutingModule,
+        CardModule,
+        PanelModule,
+        BrowserAnimationsModule,
+        MegaMenuModule,
+    ],
   providers: [
     ConfirmationService
   ],
