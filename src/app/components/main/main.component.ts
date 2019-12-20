@@ -15,7 +15,8 @@ export class MainComponent implements OnInit {
   menuItems: MenuItem[];
   display: boolean;
 
-  constructor(private readonly store$: Store<SystemFeatureState>) {
+  constructor(private readonly store$: Store<SystemFeatureState>,
+              private readonly router: Router) {
   }
 
   ngOnInit(): void {
@@ -41,5 +42,9 @@ export class MainComponent implements OnInit {
         routerLink: '/contact'
       }
     ];
+  }
+
+  redirectToNotifications(): void {
+    this.router.navigate(['/notifications']);
   }
 }
